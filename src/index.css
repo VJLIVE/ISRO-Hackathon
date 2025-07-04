@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Define twinkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.3; }
+}
+
+/* Starry background wrapper */
+.starry-bg {
+  position: relative;
+  background-color: #020617;
+  overflow: hidden;
+}
+
+/* Twinkling stars layer */
+.starry-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+  radial-gradient(#ffffff3d 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: twinkle 4s infinite ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
